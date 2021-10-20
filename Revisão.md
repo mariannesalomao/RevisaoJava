@@ -781,10 +781,262 @@ Para uma classe ser executável ela precisa declarar um método chamado main com
 
 11. Explique e exemplifique estruturas condicionais e estruturas de repetição em Java.
 
-- As estruturas condicionais possibilitam ao programa tomar decisões e alterar o seu fluxo de execução.
+- **ESTRUTURAS CONDICIONAIS**
 
-- As estruturas condicionais geralmente analisam expressões booleanas e, caso estas expressões sejam verdadeiras, um trecho do código é executado. No caso contrário, outro trecho do código é executado.
+    - As estruturas condicionais possibilitam ao programa tomar decisões e alterar o seu fluxo de execução.
 
-    - **IF/ELSE**
+    - As estruturas condicionais geralmente analisam expressões booleanas e, caso estas expressões sejam verdadeiras, um trecho do código é executado. No caso contrário, outro trecho do código é executado.
 
-        - O if/else é uma estrutura de condição em que uma expressão booleana é analisada. Quando a condição que estiver dentro do if for verdadeira, ela é executada. Já o else é utilizado para definir o que é executado quando a condição analisada pelo if for falsa. Caso o if seja verdadeiro e, consequentemente executado, o else não é executado.
+        - **IF/ELSE**
+
+            - O if/else é uma estrutura de condição em que uma expressão booleana é analisada. Quando a condição que estiver dentro do if for verdadeira, ela é executada. Já o else é utilizado para definir o que é executado quando a condição analisada pelo if for falsa. Caso o if seja verdadeiro e, consequentemente executado, o else não é executado.
+
+
+                    public class Exemplo {
+                        
+                        public static void main(String[] args) {
+                            int resposta = 10;
+                            if (resposta == 10) {
+                                // Se a variável for igual a 10, a frase abaixo será escrita
+                                System.out.println(“Você acertou!”);
+                            } else {
+                                // Caso contrário, a frase abaixo será escrita
+                                System.out.println(“Você errou!”);
+                            }
+                        }
+                        
+                    }
+
+            - Outro exemplo sem o else:
+
+                    public class Exemplo {
+                
+                        public static void main(String[] args) {
+                            int resposta = 10;
+                            if (resposta == 10) { 
+                                // Se a variável for igual a 10, a frase abaixo será escrita
+                                System.out.println(“Você acertou!”);
+                            }
+                            // Se a variável não for igual a 10, nenhuma frase será exibida
+                        }
+                        
+                    }
+
+        
+        - **SWITCH/CASE**
+
+            - A estrutura condicional switch/case vem como alternativa em momentos em que temos que utilizar múltiplos ifs no código. Múltiplos if/else encadeados tendem a tornar o código muito extenso, pouco legível e com baixo índice de manutenção.
+
+            - O switch/case testa o valor contido em uma variável, realizando uma comparação com cada uma das opções. Cada uma dessas possíveis opções é delimitada pela instrução case.
+
+            - Podemos ter quantos casos de análise forem necessários e, quando um dos valores corresponder ao da variável, o código do case correspondente será executado. Caso a variável não corresponda a nenhum dos casos testados, o último bloco será executado, chamado de default (padrão).
+
+            - A análise de cada caso também precisa ter seu final delimitado. Essa delimitação é feita através da palavra break.
+
+                    public class Exemplo {
+                        
+                        public static void main(String[] args) {
+                            int mes = 2;
+                            switch (mes) {
+                                case 1:
+                                    System.out.println(“O mês é janeiro”);
+                                    break;
+                                case 2:
+                                    System.out.println(“O mês é fevereiro”);
+                                    break;
+                                case 3:
+                                    System.out.println(“O mês é março”);
+                                    break;
+                                case 4:
+                                    System.out.println(“O mês é abril”);
+                                    break;
+                                case 5:
+                                    System.out.println(“O mês é maio”);
+                                    break;
+                                case 6:
+                                    System.out.println(“O mês é junho”);
+                                    break;
+                                case 7:
+                                    System.out.println(“O mês é julho”);
+                                    break;
+                                case 8:
+                                    System.out.println(“O mês é agosto”);
+                                    break;
+                                case 9:
+                                    System.out.println(“O mês é setembro”);
+                                    break;
+                                case 10:
+                                    System.out.println(“O mês é outubro”);
+                                    break;
+                                case 11:
+                                    System.out.println(“O mês é novembro”);
+                                    break;
+                                case 12:
+                                    System.out.println(“O mês é dezembro”);
+                                    break;
+                                default:
+                                    System.out.println(“Mês inválido”);
+                                    break;
+                            }
+                        }
+                        
+                    }
+
+- **ESTRUTURAS DE REPETIÇÃO**
+
+    - Estruturas de repetição, também conhecidas como loops (laços), são utilizadas para executar repetidamente uma instrução ou bloco de instrução enquanto determinada condição estiver sendo satisfeita.
+
+    - **FOR**
+
+        - O for é uma estrutura de repetição na qual seu ciclo será executado por um tempo ou condição pré-determinados e em uma quantidade de vezes que determinamos.
+
+        - Estrutura do for:
+
+                for (<variável de controle>, <análise da variável de controle>, <incremento da variável de controle>) {
+                    // Código a ser executado
+                }
+        
+        - Quando utilizamos o for, precisamos de uma variável para auxiliar a controlar a quantidade de repetições a serem executadas. Essa variável é chamada de variável de controle e é declarada no primeiro argumento do for.
+
+                public class Exemplo {
+            
+                    public static void main(String[] args) {
+                        for (int i = 0; i <= 10; i++) {
+                            System.out.println(“A variável i agora vale “ + i);
+                        }
+                    }
+                    
+                }
+
+        - A execução desse código causaria a seguinte saída:
+
+                A variável i agora vale 0
+                A variável i agora vale 1
+                A variável i agora vale 2
+                A variável i agora vale 3
+                A variável i agora vale 4
+                A variável i agora vale 5
+                A variável i agora vale 6
+                A variável i agora vale 7
+                A variável i agora vale 8
+                A variável i agora vale 9
+                A variável i agora vale 10
+
+        - Isso acontece porque:
+
+            - A variável de controle, que chamamos de “i”, tem seu valor inicial como 0;
+
+            - No segundo bloco, onde escrevemos “i <= 10”, estamos dizendo que o conteúdo do for será executado enquanto o valor de i for menor ou igual a 10;
+
+            - Com o terceiro bloco definido como “i++”, estamos dizendo que, no fim de cada execução do for, o conteúdo de “i” será incrementado em 1 unidade. Isso quer dizer que, no fim da primeira execução, i irá de 0 para 1; na segunda execução, irá de 1 para 2, e assim por diante;
+
+            - Com isso, o conteúdo do for será executado por 11 vezes, já que o i é iniciado em 0. A saída do código acima mostra que a mensagem foi escrita por 11 vezes, onde o “i” variou de 0 até 10.
+
+        - Um ponto importante sobre o for é que, por causa da utilização da variável de controle, geralmente ele é utilizado quando sabemos exatamente quantas vezes queremos repetir a execução do trecho de código.
+
+    
+    - **WHILE**
+
+        - O while também é uma estrutura de repetição, assim como o for. A diferença entre ambas é que, enquanto usamos o for quando geralmente conhecemos a quantidade de vezes que o trecho de código deverá ser repetido, nós utilizamos o while quando não sabemos exatamente quantas vezes o código será repetido.
+
+        - O while possui a seguinte estrutura:
+
+                while (<condição>) {
+                    // Trecho de código a ser repetido
+                }
+
+        - Abaixo, temos um exemplo do while. Neste exemplo, é pedido ao usuário que tente adivinhar o número. Enquanto o usuário não acerta o número, é pedido para que o usuário digite o valor que ele acha que é o correto. Perceba que nós temos um trecho de código que é sempre repetido, que é o pedido do número para o usuário. Mas, não sabemos exatamente quando o usuário vai acertar este número, ou seja, não sabemos exatamente quantas vezes o trecho de código será repetido. Nessa situação, o while é a estrutura de repetição mais adequada.
+
+                import java.util.Scanner;
+
+                public class Exemplo {
+                    
+                    public static void main(String[] args) {
+                        Scanner in = new Scanner(System.in);
+                        int numero = -1;
+                        while (numero != 10) { 
+                // enquanto a variável não for 10, o trecho de código será repetido
+                            System.out.println(“Digite um número: “);
+                            numero = in.nextInt();
+                            if (numero == 10) {
+                                System.out.println(“Você acertou!“);
+                            } else {
+                                System.out.println(“Você errou :(“);
+                            }
+                        }
+                    }
+                                                
+                }
+
+    
+    - **DO WHILE** (faça-enquanto)
+
+        - A diferença desse iterador para os outros, é que o bloco de instrução será executado no mínimo uma única vez.
+
+                do{
+                //instruções a serem executadas
+                }while(True)
+
+        - Exemplo:
+
+                int i = 0;
+                do{
+
+                }while(i !=0 );
+
+        - Veja que a condição contida na instrução WHILE não será verdadeira, porém, ainda assim, o bloco terá sido executado por no mínimo uma vez.
+
+                public class Aula0027 {
+                    public static void main(String[] args) {
+                        //laço de repetição do-while
+                        int i = 0;
+
+                        do{
+                            System.out.println( i );
+                            ++i;
+                        }while(i <= 10);
+                //        }while(i != 1);
+                    }
+                }
+
+    - **Quebras de Laço**
+
+        - As quebras de laço são utilizadas para interromper o fluxo normal das estruturas de repetição while, do-while e for. Há dois tipos distintos de quebras de laço, representadas pelas palavras reservadas break e continue.
+
+        - Há situações em que é preciso interromper um laço antes que sua condição se torne falsa. É para isso que serve o break. Figurando dentro do bloco de instruções de um laço qualquer, essa instrução encerra a estrutura de repetição, desviando a execução do aplicativo para a linha seguinte ao final desse laço.
+
+        - Enquanto a instrução break é utilizada para encerrar um laço, a instrução continue serve para iniciar uma nova repetição em que todas as instruções tenham sido executadas. Em laços while e do-while, uma instrução continue desvia o fluxo de execução para a condição. Em um laço for, ela desvia o fluxo de execução para a iteração e, em seguida, a condição é lida novamente.
+
+    - **RECURSIVIDADE**
+
+        - A recursividade trabalha de forma similar a um laço de repetição, na verdade tudo que fazemos em laço, pode ser feito em recursividade. A recursividade é nada mais nada menos do que uma função dentro da outra e ela deve ser pensada como uma pilha (estrutura de dados onde o ultimo a entrar, deve ser o primeiro a sair). A estrutura dela consiste em descer até a base fazendo os cálculos ou rotinas de cada instrução, e então da base até o topo da pilha são empilhados os resultados de cada instrução e no final o topo contém o resultado que é retornado.
+
+
+![1](./PicRevisao/5.png)
+
+
+        - Obs: O “fatorial(4)” só pode ser descoberto depois que o “fatorial(3)” for descoberto, que por sua vez só poderá ser descoberto depois do fatorial(2) e assim por diante. Por isso vai do topo até a base, e depois vai empilhando os resultados da base até o topo.
+
+![1](./PicRevisao/6.png)
+
+        - Recursão é um método de programação no qual uma função chama a si mesma. A recursão é utilizada quando queremos resolver um subproblema do mesmo tipo menor.
+
+----
+
+- Recursão é um método de programação no qual uma função chama a si mesma. A recursão é utilizada quando queremos resolver um subproblema do mesmo tipo menor.
+
+- Se o problema é pequeno
+
+    - não resolva o problema diretamente
+
+- Senão
+
+    - Reduza o problema em um problema menor, chame novamente o método para o problema menor e volte ao problema original.
+
+- A chamada ao método recursivo é igual a uma chamada de método normal, quando a execução do método terminar ele deve voltar para o mesmo método, só preste atenção, pois o estado do método pode ser diferente para cada vez que ele se chama.
+
+- Mas o que isso quer dizer?
+
+    - Os valores das variáveis passadas por parâmetro podem ser diferentes para cada vez que o método se chama, no exemplo abaixo vamos reescrever o método imprimir, mas agora vamos criar seu código de forma recursiva.
+
+    - Antes de começar a escrever o código um método recursivo, precisamos pensar qual condição será interrompida a chamada recursiva, ou seja, quando o método precisa parar de se chamar.
