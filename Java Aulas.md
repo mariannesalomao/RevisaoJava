@@ -288,3 +288,27 @@ O `create table` é o comando usado para criar tabelas.
 Sabendo disso, vamos à criação delas.
 
 ![1](./Pictures/12.png)
+
+![1](./Pictures/13.png)
+
+![1](./Pictures/14.png)
+
+  - Após criadas todas as nossas tabelas, para você ver se realmente
+estão criadas no banco de dados, utilize o comando `\dt`
+
+9. CONSTRAINTS
+
+  - Os tipos de dados são uma forma para limitar o tipo de dados
+que pode ser armazenado em uma tabela. Para muitas aplicações,
+contudo, a restrição que eles fornecem é demasiadamente grosseira.
+
+  - Por exemplo, uma coluna contendo preços de produtos
+provavelmente só pode aceitar valores positivos. Mas não há
+nenhum tipo de dados padrão que aceite apenas números positivos.
+Outra questão é que você pode querer restringir os dados de uma
+coluna com relação a outras colunas ou linhas, tabela contendo informações sobre o produto deve haver apenas uma linha para cada número de produto.
+
+  - Assim, o SQL permite definir restrições em colunas e tabelas.
+Restrições darão tanto controle sobre os campos como em suas
+tabelas, como você desejar. Se um usuário tentar armazenar dados
+em uma coluna que possa violar uma restrição, será gerado um erro.
