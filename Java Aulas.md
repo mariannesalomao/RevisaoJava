@@ -2,6 +2,57 @@
 
 > "Não se preocupe se não funcionar direito. Se tudo funcionasse, você estaria desempregado". — Lei de Mosher da Engenharia de Software
 
+## INPUT/OUTPUT
+
+- Iremos começar com manipulação de ficheiros e diretórios.
+
+        import java.io.*;
+        
+        public class JavaFile {
+          public static void main(String args[]) {
+              File file = new File("C:\\file.txt");
+        
+              System.out.println( file.getName() ); 
+        
+              file.setReadOnly();
+        
+              System.out.println( file.isHidden() );
+              System.out.println( file.canRead() );
+              System.out.println( file.canWrite() );
+        
+              file.renameTo( new File("C:\\Ficheiro.txt") ); 
+        
+              try {
+                if( !file.exists() ) {
+                    file.createNewFile();
+                }
+              }
+              catch(Exception e){
+                System.out.println(e.getMessage());
+              }
+        
+              if( file.isDirectory() ) {
+                System.out.println("Directoria");
+              }
+              else if( file.isFile() ){
+                System.out.println("Ficheiro");
+              }
+        
+              File [] roots = file.listRoots( );
+        
+              for (int i = 0; i < roots.length; i++) {
+                System.out.println (roots[i] );
+              }
+        
+              file.delete();
+          }
+        }
+
+- Como podemos ver na linha 5 é instanciado um objeto File que representa o caminho (path) para um possível local do sistema operacional.
+
+- O método getName() que permite obter o nome do arquivo ou diretório representada pelo File.
+
+- Esta classe permite também dar atributos a arquivos ou diretórios, como é o caso do método setReadOnly(), que dá ao arquivo ou diretório, o atributo de apenas poder ser lido e não escrito. ReadOnly
 ### MÉTODOS HTTP
 
 - Existem 8 métodos HTTP e eles fazem a comunicação entre os nós da rede.
